@@ -28,14 +28,13 @@ body {
  * Header
  */
 
- .banner-wrap {
-  background-image: url(./assets/bgimage.jpg);
+.banner-wrap {
+  background-image: url(./assets/cover-2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-  border-bottom: 10px solid #222;
+  background-position: center; 
   position: relative;
+  height: 100vh;
   z-index: 1;
 }
 .overlay {
