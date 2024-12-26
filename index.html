@@ -318,7 +318,26 @@
     <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
   </footer>
 </div>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <script>
+        
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header")
+      header.classList.toggle("scrolling", window.scrollY > 0)
+  })
+
+  </script>
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed('#typed', {
+      stringsElement: '#typed-strings'
+      });
+    </script>
 
   </body>
 </html>

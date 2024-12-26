@@ -64,7 +64,8 @@
   border-bottom-color: #fff;
 }
 
-header {
+.scrolling {
   background: black;
   opacity: 80%;
+  transition: all 0.5s;
 }
