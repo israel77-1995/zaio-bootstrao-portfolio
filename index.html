@@ -130,10 +130,10 @@
 
     <section id="about-us">
       <div class="container p-5">
-        <div class="card">
+        <div class="card" data-animate>
           <div class="card-body">
             <div class="row p-3">
-              <div class="col-md-6 col-sm-12">
+              <div class="col-md-6 col-sm-12" data-animate="left">
                 <div class="row">
                   <div class="col-md-5"><img src="assets/israel.JPG" class="img-fluid" alt="profile image">
                   </div>
@@ -143,23 +143,23 @@
                       <p><strong>Email:</strong> Israelmbuyu77@gmail.com</p>
                       <p><strong>Phone:</strong> +27785656148</p>
                       <p><strong>Skills:</strong> 
-                              <span class="badge rounded-pill bg-dark">HTML</span>
-                              <span class="badge rounded-pill bg-dark">CSS</span>
-                              <span class="badge rounded-pill bg-dark">git</span>
-                              <span class="badge rounded-pill bg-dark">javascript</span>
-                              <span class="badge rounded-pill bg-dark">firebase</span>
-                              <span class="badge rounded-pill bg-dark">OOP</span>
-                              <span class="badge rounded-pill bg-dark">ReactJS</span>
-                              <span class="badge rounded-pill bg-dark">Java</span>
-                              <span class="badge rounded-pill bg-dark">NodeJS</span>
-                              <span class="badge rounded-pill bg-dark">Sql</span>
-                              <span class="badge rounded-pill bg-dark">Python</span>                              
+                              <span class="badge rounded-pill">HTML</span>
+                              <span class="badge rounded-pill">CSS</span>
+                              <span class="badge rounded-pill">git</span>
+                              <span class="badge rounded-pill">javascript</span>
+                              <span class="badge rounded-pill">firebase</span>
+                              <span class="badge rounded-pill">OOP</span>
+                              <span class="badge rounded-pill">ReactJS</span>
+                              <span class="badge rounded-pill">Java</span>
+                              <span class="badge rounded-pill">NodeJS</span>
+                              <span class="badge rounded-pill">Sql</span>
+                              <span class="badge rounded-pill">Python</span>                              
                       </p>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 mt-3">
+              <div class="col-md-6 mt-3" data-animate="right">
                   <h1 class="text-center text-lg-start"><mark>About me</mark></h1>
                   <p class="lead">I’m Israel Mbuyu, a full-stack software developer with experience across frontend and backend development. I work with HTML, CSS, JavaScript, Python, Java, SQL, and Django to build reliable, user-focused web applications.
 
@@ -175,9 +175,9 @@ With a strong technical foundation and a business-oriented mindset, I focus on b
 
     <section id="projects">
       <div class="container p-5">
-        <h1 class="text-center"><mark>Projects</mark></h1>
+        <h1 class="text-center" data-animate><mark>Projects</mark></h1>
         <div class="row">
-          <div class="col-md-4 mt-3">
+          <div class="col-md-4 mt-3" data-animate>
             <div class="card">
               <img
                 src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/css_netflix.png"
@@ -193,7 +193,7 @@ With a strong technical foundation and a business-oriented mindset, I focus on b
             </div>
           </div>
 
-          <div class="col-md-4 mt-3">
+          <div class="col-md-4 mt-3" data-animate>
             <div class="card">
               <img
                 src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/css_netflix.png"
@@ -209,7 +209,7 @@ With a strong technical foundation and a business-oriented mindset, I focus on b
             </div>
           </div>
 
-          <div class="col-md-4 mt-3">
+          <div class="col-md-4 mt-3" data-animate>
             <div class="card">
               <img
                 src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/css_netflix.png"
@@ -230,7 +230,7 @@ With a strong technical foundation and a business-oriented mindset, I focus on b
 
     <section id="contact">
       <div class="container p-5">
-        <div class="card p-3">
+        <div class="card p-3" data-animate>
           <div class="card-body px-5 text-center">
             <h1 class="text-center"><mark>Let's Connect!</mark></h1>
             <p class="lead">Would love to connect with fellow developers, employers looking for developers, or anyone looking to get web development done.</p>
@@ -272,12 +272,22 @@ With a strong technical foundation and a business-oriented mindset, I focus on b
 
 
   <script>
-        
+    // header scroll effect
     window.addEventListener("scroll", () => {
-      const header = document.querySelector("header")
-      header.classList.toggle("scrolling", window.scrollY > 0)
-  })
+      document.querySelector("header").classList.toggle("scrolling", window.scrollY > 0);
+    });
 
+    // scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
   </script>
 
 
