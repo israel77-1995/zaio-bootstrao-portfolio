@@ -60,7 +60,7 @@ header h3 {
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   position: relative;
-  padding-bottom: 4px !important;
+  padding: 4px 14px !important;
 }
 
 .nav-masthead .nav-link::after {
